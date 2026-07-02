@@ -1,11 +1,24 @@
-﻿double a, b, x, y;
-a = b = 1;
-x = 2;
-y = 3;
+﻿//declare
+string Id;
+double Year, Salary, Bonus=0;
 
-//var กำหนดตัวแปรแบบไม่ระบุชนิดข้อมูล (var) จะให้ตัวแปรนั้นมีชนิดข้อมูลตามค่าที่กำหนดให้
-var num1 = (a + b ) / (3 * a * b);
-var num2 = (x * x* y * y) / (x - y);
-var result = num1 - num2;
 
-Console.WriteLine(result);
+//input
+Console.Write("Enter employee ID: ");
+Id= Console.ReadLine();
+
+Console.Write("Enter years of service: ");
+Year = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Enter salary: ");
+Salary = Convert.ToDouble(Console.ReadLine());
+
+
+//process
+if (Year >= 3)
+{
+    Bonus = Salary * 2;
+}
+
+//output
+Console.WriteLine("Bonus: " + Bonus);
