@@ -1,34 +1,11 @@
-﻿//declare
-string Code, Name;
-double Salary, Sale,Rate, Commission,Net;
+﻿double a, b, x, y;
+a = b = 1;
+x = 2;
+y = 3;
 
-//input
-Console.Write("Enter code :");
-Code = Console.ReadLine();
+//var กำหนดตัวแปรแบบไม่ระบุชนิดข้อมูล (var) จะให้ตัวแปรนั้นมีชนิดข้อมูลตามค่าที่กำหนดให้
+var num1 = (a + b ) / (3 * a * b);
+var num2 = (x * x* y * y) / (x - y);
+var result = num1 - num2;
 
-Console.Write("Enter name :");
-Name = Console.ReadLine();
-
-Console.Write("Enter salary :");
-Salary = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter sale :");
-Sale = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter rate 1-100 : ");
-Rate = Convert.ToDouble(Console.ReadLine());
-
-//process
-Commission = Sale * (Rate/100);
-Net = Salary + Commission;
-
-//output
-Console.WriteLine($"Commission = {Commission}");
-Console.WriteLine($"Net = {Net}");
-
-
-
-/// priority     + - * / ( ) จากซ้ายไปขวา ทำ (), ทำ * / ก่อน,  + -
-
-
-
+Console.WriteLine(result);
