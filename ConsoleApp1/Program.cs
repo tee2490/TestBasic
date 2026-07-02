@@ -1,39 +1,27 @@
 ﻿//declare
-string Id;
-double Salary, PSale, Rate, Num, Bonus=0, Bonus1=0;
+double status, price, quantity, discount=0, tax, netPrice;
 
 //input
-Console.Write("Enter employee ID: ");
-Id = Console.ReadLine();
+Console.Write("Enter customer status: [1=Member 9=Non-Member]");
+status = Convert.ToDouble(Console.ReadLine());
 
-Console.Write("Enter salary: ");
-Salary = Convert.ToDouble(Console.ReadLine());
+Console.Write("Enter price: ");
+price = Convert.ToDouble(Console.ReadLine());
 
-Console.Write("Enter total sales: ");
-PSale = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter commission rate [0-1]: ");
-Rate = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter number of cars sold: ");
-Num = Convert.ToDouble(Console.ReadLine());
+Console.Write("Enter quantity: ");
+quantity = Convert.ToDouble(Console.ReadLine());
 
 //process
-var Commission = PSale * Rate;
+var TotalPrice = price * quantity;
 
-if(Num > 5)
-{
-    Bonus = 9000;
+if (status == 1) { 
+    discount = TotalPrice * 0.1;
 }
 
-if(Commission > Salary)
-{
-    Bonus1 = PSale * 0.1;
-}
+//หลังจากคำนวณราคาสุทธิแล้วให้คำนวณภาษีมูลค่าเพิ่ม 7% และราคาสุทธิหลังหักส่วนลดและบวกภาษี
+tax = (TotalPrice - discount) * 0.07;
+netPrice = TotalPrice - discount + tax;
 
-var net = Salary + Commission + Bonus + Bonus1;
 
 //output
-Console.WriteLine("Commission: "+Commission);
-Console.Write("Salary: " + Salary);
-Console.WriteLine("Total Income: " + net);
+Console.WriteLine("Net Price: " + netPrice);
