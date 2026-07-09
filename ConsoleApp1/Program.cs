@@ -1,27 +1,23 @@
-﻿//declare
-double status, price, quantity, discount=0, tax, netPrice;
+﻿var num = 1;
 
-//input
-Console.Write("Enter customer status: [1=Member 9=Non-Member]");
-status = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter price: ");
-price = Convert.ToDouble(Console.ReadLine());
-
-Console.Write("Enter quantity: ");
-quantity = Convert.ToDouble(Console.ReadLine());
-
-//process
-var TotalPrice = price * quantity;
-
-if (status == 1) { 
-    discount = TotalPrice * 0.1;
+if (num == 1)
+{
+    //true
+    Console.WriteLine("Yes");
+    Console.WriteLine("Yes");
+    Console.WriteLine("Yes");
+}
+else
+{
+    //false
+    Console.WriteLine("No");
+    Console.WriteLine("No");
+    Console.WriteLine("No");
 }
 
-//หลังจากคำนวณราคาสุทธิแล้วให้คำนวณภาษีมูลค่าเพิ่ม 7% และราคาสุทธิหลังหักส่วนลดและบวกภาษี
-tax = (TotalPrice - discount) * 0.07;
-netPrice = TotalPrice - discount + tax;
 
 
-//output
-Console.WriteLine("Net Price: " + netPrice);
+if (num == 1) 
+    Console.WriteLine("Yes");
+else 
+    Console.WriteLine("No");
