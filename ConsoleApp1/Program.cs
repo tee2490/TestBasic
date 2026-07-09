@@ -1,23 +1,18 @@
-﻿var num = 1;
-
-if (num == 1)
-{
-    //true
-    Console.WriteLine("Yes");
-    Console.WriteLine("Yes");
-    Console.WriteLine("Yes");
-}
-else
-{
-    //false
-    Console.WriteLine("No");
-    Console.WriteLine("No");
-    Console.WriteLine("No");
-}
+﻿
+double money,special,total,tax;
 
 
 
-if (num == 1) 
-    Console.WriteLine("Yes");
-else 
-    Console.WriteLine("No");
+//input
+money = Convert.ToDouble(Console.ReadLine());
+
+
+//process
+special = money * 0.03;
+total = money + special;
+
+if (total > 500000) tax = total * .1;
+else tax = total * 0.05;
+
+//output
+Console.WriteLine(tax);
