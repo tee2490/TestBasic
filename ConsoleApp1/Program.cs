@@ -1,18 +1,22 @@
-﻿
-double money,special,total,tax;
+﻿double income, tax, rate;
 
+income = Convert.ToDouble(Console.ReadLine());
 
+if (income < 100000)
+{
+    rate = 0;
+}
+else if (income < 500001)
+{
+    rate = 0.05;
+}
+else if (income < 1000000)
+{ 
+    rate = 0.1; 
+}
+else
+    rate = 0.15;
 
-//input
-money = Convert.ToDouble(Console.ReadLine());
+tax= income * rate;
 
-
-//process
-special = money * 0.03;
-total = money + special;
-
-if (total > 500000) tax = total * .1;
-else tax = total * 0.05;
-
-//output
-Console.WriteLine(tax);
+Console.WriteLine($"Income: {income}, Tax Rate: {rate}%, Tax: {tax}");
