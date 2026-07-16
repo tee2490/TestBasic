@@ -1,22 +1,42 @@
-﻿double income, tax, rate;
+﻿double SaleNet, TypeSale, Rate, Special, Net;
 
-income = Convert.ToDouble(Console.ReadLine());
 
-if (income < 100000)
+SaleNet = Convert.ToDouble(Console.ReadLine());
+
+TypeSale = Convert.ToDouble(Console.ReadLine());
+
+if (SaleNet >= 7000_000)
 {
-    rate = 0;
+    if (TypeSale == 1)
+    {
+        Rate = 0.3;
+        Special = 3000;
+    }
+    else 
+    {
+        Rate = 0.25;
+        Special = 2500;
+    }
 }
-else if (income < 500001)
+else if (SaleNet >= 5000_000)
 {
-    rate = 0.05;
-}
-else if (income < 1000000)
-{ 
-    rate = 0.1; 
-}
-else
-    rate = 0.15;
+    if (TypeSale == 1)
+    {
+        Rate = 0.2;
+        Special = 2000;
+    }
+    else
+    {
+        Rate = 0.15;
+        Special = 1500;
+    }
 
-tax= income * rate;
 
-Console.WriteLine($"Income: {income}, Tax Rate: {rate}%, Tax: {tax}");
+}
+else 
+{
+    Rate = 0.1;
+    Special = 1000;
+}
+
+Net = SaleNet * Rate + Special;
