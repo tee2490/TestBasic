@@ -1,42 +1,37 @@
-﻿double SaleNet, TypeSale, Rate, Special, Net;
+﻿char type;
+int hour,amountH;
+double discount;
 
+Entertype:
 
-SaleNet = Convert.ToDouble(Console.ReadLine());
+Console.Write("Enter type M/C/V/T : ");
+type = Char.ToUpper(Console.ReadKey().KeyChar);
 
-TypeSale = Convert.ToDouble(Console.ReadLine());
-
-if (SaleNet >= 7000_000)
+switch (type)
 {
-    if (TypeSale == 1)
-    {
-        Rate = 0.3;
-        Special = 3000;
-    }
-    else 
-    {
-        Rate = 0.25;
-        Special = 2500;
-    }
-}
-else if (SaleNet >= 5000_000)
-{
-    if (TypeSale == 1)
-    {
-        Rate = 0.2;
-        Special = 2000;
-    }
-    else
-    {
-        Rate = 0.15;
-        Special = 1500;
-    }
-
-
-}
-else 
-{
-    Rate = 0.1;
-    Special = 1000;
+    case 'M': hour = 10;
+        break;
+    case 'C':
+        hour = 30;
+        break;
+    case 'V':
+        hour = 40;
+        break;
+    case 'T':
+        hour = 60;
+        break;
+    default: Console.WriteLine("\nInvalid Vehicle Type");
+        goto Entertype;
+       
 }
 
-Net = SaleNet * Rate + Special;
+Console.Write("Enter hour :");
+amountH = Convert.ToInt32(Console.ReadLine());
+
+discount = hour > 5 ? 0.1 : 0;  //ternary condition
+
+var total = hour * amountH;  //ราคาเต็ม
+var net = total - (total * discount); //ราคามีส่วนลด
+
+Console.WriteLine($"Output: Parking Fee = {net} Baht");
+
