@@ -1,37 +1,30 @@
-﻿char type;
-int hour,amountH;
-double discount;
+﻿Console.Write("Enter Type (H/S/F) : ");
+char type = char.ToUpper(Console.ReadKey().KeyChar);
 
-Entertype:
+Console.Write("\nEnter Units : ");
+double unit = Convert.ToDouble(Console.ReadLine());
 
-Console.Write("Enter type M/C/V/T : ");
-type = Char.ToUpper(Console.ReadKey().KeyChar);
+double total = 0;
 
 switch (type)
 {
-    case 'M': hour = 10;
+    case 'H':
+        total = unit * 4.50;
+        if (unit > 300) total *= 0.95;
         break;
-    case 'C':
-        hour = 30;
+
+    case 'S':
+        total = unit * 5.80;
+        if (unit > 300) total *= 0.97;
         break;
-    case 'V':
-        hour = 40;
+
+    case 'F':
+        total = unit * 6.70;
         break;
-    case 'T':
-        hour = 60;
-        break;
-    default: Console.WriteLine("\nInvalid Vehicle Type");
-        goto Entertype;
-       
+
+    default:
+        Console.WriteLine("Invalid Type");
+        return;
 }
 
-Console.Write("Enter hour :");
-amountH = Convert.ToInt32(Console.ReadLine());
-
-discount = hour > 5 ? 0.1 : 0;  //ternary condition
-
-var total = hour * amountH;  //ราคาเต็ม
-var net = total - (total * discount); //ราคามีส่วนลด
-
-Console.WriteLine($"Output: Parking Fee = {net} Baht");
-
+Console.WriteLine("Electricity Bill = {0:F2} Baht", total);
