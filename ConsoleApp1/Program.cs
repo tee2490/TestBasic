@@ -1,26 +1,19 @@
-﻿//while Pretest
+﻿
+int amount;
+double num,sum=0, avg;
 
-var num = 1;
+Console.Write("Enter amount : ");
+amount = Convert.ToInt32(Console.ReadLine());
 
-while (num < 5) {
-    Console.WriteLine($"While {num}");
-    num++;
-
+var i = 0;
+while (i < amount)
+{
+    Console.Write("Enter num : ");
+    num = Convert.ToDouble(Console.ReadLine());
+    i++;
+    sum += num;
 }
 
-Console.WriteLine("For");
+avg = sum / amount;
 
-for (int i = 1; i < num; i++)
-{
-    Console.WriteLine($"For {i}");
-}
-
-
-//PostTest
-Console.WriteLine("do..while");
-num = 1;
-do 
-{
-    Console.WriteLine($"While {num}");
-    num++;
-} while (num < 5);
+Console.WriteLine($"Sum={sum} \nAvg={avg}");
