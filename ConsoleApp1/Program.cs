@@ -1,17 +1,38 @@
-﻿
-int amount;
-double num,sum=0, avg;
+﻿Random num;
+double num1,even=0,odd=0,SumEven=0,SumOdd=0,AvgEven,AvgOdd;
 
-Console.Write("Enter amount : ");
-amount = Convert.ToInt32(Console.ReadLine());
+num = new Random();
 
-for (var i = 0; i < amount; i++)
+var count = 0;
+for (int i = 0; i < 100; i++)
 {
-    Console.Write("Enter num : ");
-    num = Convert.ToDouble(Console.ReadLine());
-    sum += num;
+    num1 = num.Next(20, 31);
+    Console.Write($"{num1} ");
+
+    if (num1 % 2 == 0)
+    { 
+        even++;
+        SumEven += num1;
+
+    }
+    else 
+    { 
+        odd++; 
+        SumOdd += num1;
+    }
+
+    count++;
+    if (count == 10)
+    {
+        Console.WriteLine();
+        count = 0;
+    }
+
 }
 
-avg = sum / amount;
+AvgEven = SumEven / even;
+AvgOdd = SumOdd / odd;
 
-Console.WriteLine($"Sum={sum} \nAvg={avg}");
+Console.WriteLine("Type\tNumber\tSum\tAverage");
+Console.WriteLine($"Even\t{even}\t{SumEven}\t{AvgEven:F2}");
+Console.WriteLine($"Odd\t{odd}\t{SumOdd}\t{AvgOdd:F2}");
