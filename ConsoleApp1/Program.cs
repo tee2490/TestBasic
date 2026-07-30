@@ -1,30 +1,26 @@
-﻿Console.Write("Enter Type (H/S/F) : ");
-char type = char.ToUpper(Console.ReadKey().KeyChar);
+﻿//while Pretest
 
-Console.Write("\nEnter Units : ");
-double unit = Convert.ToDouble(Console.ReadLine());
+var num = 1;
 
-double total = 0;
+while (num < 5) {
+    Console.WriteLine($"While {num}");
+    num++;
 
-switch (type)
-{
-    case 'H':
-        total = unit * 4.50;
-        if (unit > 300) total *= 0.95;
-        break;
-
-    case 'S':
-        total = unit * 5.80;
-        if (unit > 300) total *= 0.97;
-        break;
-
-    case 'F':
-        total = unit * 6.70;
-        break;
-
-    default:
-        Console.WriteLine("Invalid Type");
-        return;
 }
 
-Console.WriteLine("Electricity Bill = {0:F2} Baht", total);
+Console.WriteLine("For");
+
+for (int i = 1; i < num; i++)
+{
+    Console.WriteLine($"For {i}");
+}
+
+
+//PostTest
+Console.WriteLine("do..while");
+num = 1;
+do 
+{
+    Console.WriteLine($"While {num}");
+    num++;
+} while (num < 5);
