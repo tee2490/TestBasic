@@ -1,20 +1,21 @@
 ﻿using ConsoleApp1.Models;
 
-List<int> nums = new List<int>(); //ไม่จำกัด
-int[] test = new int[10]; //จำกัดจำนวน
+List<Product> products = new List<Product>();
+Random rnd = new Random();
 
-Random random = new Random();
+for (int i = 0; i < 100; i++)
+{
+    var test = new Product() //สินค้า 1 รายการ
+    {
+        Id = i,
+        Name = "Product"+i,
+        Price=rnd.Next(10,21)
+    };
 
-for (int i = 0; i < 10; i++)
-{ 
-    nums.Add(random.Next(10,101));
+    products.Add(test); //เพิ่มสินค้าเข้าไปใน list
 }
 
 
-//foreach (var item in nums)
-//{
-//    Console.WriteLine(item);
-//}
+products.ForEach(p => p.Display());
 
 
-nums.ForEach(x => Console.WriteLine(x)); //lamda
