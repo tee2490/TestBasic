@@ -89,6 +89,32 @@ namespace ConsoleApp1.Services
             }
         }
 
+        public void UpdateData()
+        {
+            var result = Search();
+
+            if (result != null)
+            {
+                Console.WriteLine($"{result.Id} {result.Name} {result.Price}");
+
+                Console.Write("Enter new id : ");
+                result.Id = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter new name : ");
+                result.Name = Console.ReadLine();
+
+                Console.Write("Enter new price : ");
+                result.Price = Convert.ToInt32(Console.ReadLine());
+
+                Show();
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+        }
+
+
     }
 
 }

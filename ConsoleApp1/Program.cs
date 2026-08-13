@@ -5,5 +5,5 @@ var ps = new Generate(); //Method พิเศษที่ทำงาน อั
 ps.Create(10);
 ps.Show();
 
-ps.DeleteData();
+ps.UpdateData();
 
