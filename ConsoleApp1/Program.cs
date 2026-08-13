@@ -1,13 +1,20 @@
 ﻿using ConsoleApp1.Models;
 
-Product test,test1; //ประกาศใช้แม่แบบ
+List<int> nums = new List<int>(); //ไม่จำกัด
+int[] test = new int[10]; //จำกัดจำนวน
+
+Random random = new Random();
+
+for (int i = 0; i < 10; i++)
+{ 
+    nums.Add(random.Next(10,101));
+}
 
 
-test = new Product();  //object/วัตถุ--อยู่ใน memory  OOP
-test1= new Product(); //reuse
+//foreach (var item in nums)
+//{
+//    Console.WriteLine(item);
+//}
 
-//กำหนดค่า
-test.Id = 1;
-test.Name = "Tee";
-test.Price = 100;
 
+nums.ForEach(x => Console.WriteLine(x)); //lamda
