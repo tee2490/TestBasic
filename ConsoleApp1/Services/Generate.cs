@@ -39,7 +39,28 @@ namespace ConsoleApp1.Services
 
         public void Show()
         {
+            Console.Clear();
             products.ForEach(p =>p.Display());
+        }
+
+
+        public void AddData()
+        {
+            var p = new Product();
+
+            Console.Write("Enter id : ");
+            p.Id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter name : ");
+            p.Name = Console.ReadLine();
+
+            Console.Write("Enter price : ");
+            p.Price = Convert.ToInt32(Console.ReadLine());
+
+
+            products.Add(p);
+            Show();
+
         }
 
 
