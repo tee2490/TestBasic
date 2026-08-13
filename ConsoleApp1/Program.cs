@@ -1,20 +1,13 @@
-﻿int[] num= new int[10];
-Random random = new Random();
- 
-//input
-for(int i = 0; i < num.Length; i++) num[i] = random.Next(1,101);
+﻿using ConsoleApp1.Models;
 
-var max = num[0];
-var min = num[0];
+Product test,test1; //ประกาศใช้แม่แบบ
 
-//process
-for (int i = 1; i < num.Length; i++)
-{ 
-  if(num[i] > max) max = num[i];
-  if(num[i] < min) min = num[i];
-}
 
-//output
-for (int i = 0; i < num.Length; i++) Console.WriteLine($"no.{i} = {num[i]}");
+test = new Product();  //object/วัตถุ--อยู่ใน memory  OOP
+test1= new Product(); //reuse
 
-Console.WriteLine($"Max={max}\nMin={min}");
+//กำหนดค่า
+test.Id = 1;
+test.Name = "Tee";
+test.Price = 100;
+
