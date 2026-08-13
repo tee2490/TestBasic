@@ -4,12 +4,27 @@ namespace ConsoleApp1.Services
 {
     public class Generate  //บริการ สร้าง แก้ ลบ ค้น CRUD
     {
-        List<Product> products = new List<Product>();
-        Random rnd = new Random();
+        List<Product> products;
+        Random rnd; 
 
-        public void Create() //method
+        public Generate() //Constuctor : Method พิเศษที่ทำงาน อัตโนมัติเมื่อสร้าง Object
         {
-            for (int i = 0; i < 10; i++)
+            products = new List<Product>();
+            rnd = new Random();
+        }
+
+
+        public Generate(int newNum=5) //ctor
+        {
+            products = new List<Product>();
+            rnd = new Random();
+            Create(newNum);
+            Show();
+        }
+
+        public void Create(int num=10) //method
+        {
+            for (int i = 0; i < num; i++)
             {
                 products.Add(new Product()
                 {
