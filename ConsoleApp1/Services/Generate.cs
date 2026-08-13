@@ -5,7 +5,7 @@ namespace ConsoleApp1.Services
     public class Generate  //บริการ สร้าง แก้ ลบ ค้น CRUD
     {
         static List<Product> products;
-        Random rnd; 
+        Random rnd;
 
         public Generate() //Constuctor : Method พิเศษที่ทำงาน อัตโนมัติเมื่อสร้าง Object
         {
@@ -14,7 +14,7 @@ namespace ConsoleApp1.Services
         }
 
 
-        public Generate(int newNum=5) //ctor
+        public Generate(int newNum = 5) //ctor
         {
             products = new List<Product>();
             rnd = new Random();
@@ -22,7 +22,7 @@ namespace ConsoleApp1.Services
             Show();
         }
 
-        public void Create(int num=10) //method
+        public void Create(int num = 10) //method
         {
             for (int i = 0; i < num; i++)
             {
@@ -40,7 +40,7 @@ namespace ConsoleApp1.Services
         public void Show()
         {
             Console.Clear();
-            products.ForEach(p =>p.Display());
+            products.ForEach(p => p.Display());
         }
 
 
@@ -64,5 +64,32 @@ namespace ConsoleApp1.Services
         }
 
 
+        public Product Search()
+        {
+            Console.Write("Enter idTemp : ");
+            var idTemp = Convert.ToInt32(Console.ReadLine());
+
+            var pro = products.Find(p=>p.Id ==idTemp);
+            return pro;
+        }
+
+        public void DeleteData()
+        {
+          
+            var result = Search();
+
+            if (result != null)
+            {
+                products.Remove(result);
+                Show();
+            }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+        }
+
     }
+
 }
+

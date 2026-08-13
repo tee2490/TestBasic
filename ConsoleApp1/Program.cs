@@ -2,9 +2,8 @@
 
 var ps = new Generate(); //Method พิเศษที่ทำงาน อัตโนมัติเมื่อสร้าง Object
 
-ps.Create(2);
+ps.Create(10);
 ps.Show();
 
-ps.AddData();
-ps.AddData();
-ps.AddData();
+ps.DeleteData();
+
