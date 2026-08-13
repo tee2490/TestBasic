@@ -6,3 +6,5 @@ ps.Create(2);
 ps.Show();
 
 ps.AddData();
+ps.AddData();
+ps.AddData();

@@ -4,7 +4,7 @@ namespace ConsoleApp1.Services
 {
     public class Generate  //บริการ สร้าง แก้ ลบ ค้น CRUD
     {
-        List<Product> products;
+        static List<Product> products;
         Random rnd; 
 
         public Generate() //Constuctor : Method พิเศษที่ทำงาน อัตโนมัติเมื่อสร้าง Object
