@@ -18,5 +18,22 @@ namespace ConsoleApp2.Models
         {
             return Price - Discount;
         }
+
+        // เขียนทับ Display() ของ Product
+        public override void Display()
+        {
+            double netPrice = Price - Discount;
+
+            Console.WriteLine(
+                $"{Id} {Name} Price:{Price} Discount:{Discount} Net:{netPrice}"
+            );
+        }
+
+
+        // เรียก Display ของแม่
+        public void DisplayParent()
+        {
+            base.Display();
+        }
     }
 }

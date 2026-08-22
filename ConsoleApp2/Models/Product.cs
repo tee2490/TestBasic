@@ -36,7 +36,7 @@ namespace ConsoleApp2.Models
             return Stock;
         }
 
-        public void Display()
+        public virtual void Display() //Override method
         {
             Console.WriteLine($"{Id} {Name} {Price} Stock:{Stock} Profit:{GetProfit()}");
         }
