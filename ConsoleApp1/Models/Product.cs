@@ -10,7 +10,6 @@ namespace ConsoleApp1.Models
         public string Name { get; set; }
         public int Price { get; set; }
 
-
         //method/function/module โปรแกรมย่อย
         public void Display()
         {
