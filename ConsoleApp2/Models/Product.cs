@@ -10,12 +10,14 @@ namespace ConsoleApp2.Models
         public string Name { get; set; }
         public double Price { get; set; }
         private double Cost { get; set; } //ราคาต้นทุน
+        protected int Discount { get; set; }   // ใช้ได้ใน Product และ Class ลูก
 
         public void SetCost(int cost)
         {
             Cost = cost;
         }
 
+       
         public double GetProfit()
         {
             return Price - Cost;

@@ -1,9 +1,8 @@
-﻿
-using ConsoleApp2.Models;
+﻿using ConsoleApp2.Models;
 
-var p = new Product();
+var sp = new SpecialProduct();
 
-//p.Cost เข้าโดยตรง
-p.SetCost(1000); //โดยอ้อม ผ่าน method
-p.Price = 1500;
-p.Display();
+sp.SetCost(100); //mothor method 
+sp.Price = 150;
+sp.SetDiscount(5); //child
+Console.WriteLine(sp.GetNetPrice());
