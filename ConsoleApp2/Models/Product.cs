@@ -41,5 +41,10 @@ namespace ConsoleApp2.Models
             Console.WriteLine($"{Id} {Name} {Price} Stock:{Stock} Profit:{GetProfit()}");
         }
 
+        public virtual double GetNetPrice()
+        {
+            return Price;
+        }
+
     }
 }

@@ -1,12 +1,23 @@
 ﻿using ConsoleApp2.Models;
 
-var sp = new SpecialProduct();
+var p1 = new Product();
+p1.Name = "Mouse";
+p1.Price = 500;
 
-sp.SetCost(100); //mothor method 
-sp.Price = 150;
-sp.SetDiscount(5); //child
-Console.WriteLine(sp.GetNetPrice());
-sp.Display();
+var p2 = new SpecialProduct();
+p2.Name = "Keyboard";
+p2.Price = 1000;
 
-// ต้องการเรียก Display ของแม่
-sp.DisplayParent();
+var p3 = new MemberProduct();
+p3.Name = "Monitor";
+p3.Price = 5000;
+
+var p4 = new ImportProduct();
+p4.Name = "Notebook";
+p4.Price = 30000;
+
+// เรียก Method เดียวกัน
+Console.WriteLine(p1.GetNetPrice());
+Console.WriteLine(p2.GetNetPrice());
+Console.WriteLine(p3.GetNetPrice());
+Console.WriteLine(p4.GetNetPrice());
