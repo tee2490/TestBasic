@@ -1,18 +1,7 @@
-﻿using ConsoleApp5.Models;
+﻿using ConsoleApp5.Services;
 
-List<Product> products = new List<Product>();
+ProductService ps = new ProductService();
 
-for (int i = 0; i < 10; i++)
-{
-    var temp = new Product()
-    {
-        Id = i,
-        Name = "Coffee" + i,
-        Price = 100
-    };
+ps.Mock(5);
 
-    products.Add(temp);
-
-}
-
-products.ForEach(p => p.Display());
+ps.Read();
