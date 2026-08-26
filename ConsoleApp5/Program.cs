@@ -1,4 +1,5 @@
-﻿using ConsoleApp5.Models;
+﻿using ConsoleApp5.Interfaces;
+using ConsoleApp5.Models;
 using ConsoleApp5.Services;
 
 ProductService ps = new ProductService();
@@ -14,3 +15,11 @@ Product p = new Product()
 ps.Create(p);
 
 ps.Read();
+
+Console.WriteLine();
+Product result = ps.Search(3);
+
+if (result != null)
+{
+    result.Display();
+}
