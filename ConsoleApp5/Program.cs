@@ -27,3 +27,8 @@ if (result != null)
 Console.WriteLine();
 ps.Update(3);
 ps.Read();
+
+Console.WriteLine();
+ps.Delete(3);
+ps.Read(); 
+
