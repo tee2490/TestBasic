@@ -23,3 +23,7 @@ if (result != null)
 {
     result.Display();
 }
+
+Console.WriteLine();
+ps.Update(3);
+ps.Read();
