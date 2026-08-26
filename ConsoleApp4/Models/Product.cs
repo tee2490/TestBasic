@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp2.Models
+namespace ConsoleApp4.Models
 {
-    public class Product  //แม่แบบ นำไปใช้ตรงๆ ไม่ได้
+    public abstract class Product  //แม่แบบ นำไปใช้ตรงๆ ไม่ได้
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -18,7 +18,7 @@ namespace ConsoleApp2.Models
             Cost = cost;
         }
 
-       
+
         public double GetProfit()
         {
             return Price - Cost;
@@ -41,15 +41,9 @@ namespace ConsoleApp2.Models
             Console.WriteLine($"{Id} {Name} {Price} Stock:{Stock} Profit:{GetProfit()}");
         }
 
-        public virtual double GetNetPrice()
-        {
-            return Price;
-        }
+        // Abstract Method   ข้อบังคับ
+        public abstract double GetNetPrice();
 
-        public virtual double GetNetPrice(double specialPrice)
-        {
-            return Price;
-        }
 
     }
 }
