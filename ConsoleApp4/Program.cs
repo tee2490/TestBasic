@@ -22,5 +22,6 @@ p3.Weight = 5;
 
 Console.WriteLine(p1.GetNetPrice());
 Console.WriteLine(p2.GetNetPrice());
-Console.WriteLine($"Shipping = {p3.GetShippingCost()}");
+
+p3.Print();
 
