@@ -4,4 +4,5 @@
   <Project Path="ConsoleApp3/ConsoleApp3.csproj" Id="8e8e785d-2ef2-4344-ac34-032f23f5745d" />
   <Project Path="ConsoleApp4/ConsoleApp4.csproj" Id="7ad1606e-9360-4efe-a135-6765dfb2c8e5" />
   <Project Path="ConsoleApp5/ConsoleApp5.csproj" Id="499a73e6-d117-4a77-8bf4-43cfb75d392b" />
+  <Project Path="ConsoleApp6/ConsoleApp6.csproj" Id="799b3280-fa4c-4bd5-bc75-9593917bc91c" />
 </Solution>
