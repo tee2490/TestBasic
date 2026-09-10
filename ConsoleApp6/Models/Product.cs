@@ -8,5 +8,9 @@
         public int B1 { get; set; }
         public int B2 { get; set; }
         public int B3 { get; set; }
+
+        public double Total() => B1 + B2 + B3;
+        public double Value() => Price * Total();
+        
     }
 }
